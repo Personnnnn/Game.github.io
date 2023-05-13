@@ -1,0 +1,20 @@
+<html>
+<head>
+<title> Custom Game </title>
+<script src="https://simplycodingcourses.com/files/simply.js"></script>
+<script>
+function start(){
+  sjs.open("target",500,400);
+  var play_btn=new sjs.Button("Play Game",function(){
+    window.location="game_code.html";
+  });
+  play_btn.center().offset(0,25);
+} //end start
+</script>
+</head>
+<body onload="start()">
+<h1> Custom Game </h1>
+
+<div id="target" style="margin:auto;background:grey;"></div>
+</body>
+</html> 
