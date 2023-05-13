@@ -44,7 +44,8 @@ function start(){
       obstacle.type="obstacle";
       obstacle.friction=0.1;
       obstacle.noBounds=true;
-      obstacle.setSize(50+Math.random()*50,50);
+      obstacle.moveTo(0,Math.random()*500)
+      obstacle.setSize(50+Math.random()*100,50);
       obstacle.pushDown(15.5);
     }
   },500);
