@@ -23,12 +23,15 @@ function start(){
   sjs.keyDown(UP_KEY,function(){
     if (can_shoot==true){
       can_shoot=false;
-      var laser=new sjs.Image("laser.png");
+      var laser_one=new sjs.Image("laser.png");
+      var laser_two=new sjs.Image("laser.png");
       laser.type="laser";
+      laser_two.type="laser";
       laser.friction=0;
       laser.noBounds=true;
       laser.setSize(16,50);
-      laser.moveTo(player.getX()+18,300);
+      laser_one.moveTo(player.getX()+18,300);
+      laser_two.moveTo(player.getX()-2.3,300);
       laser.pushUp(25.5);
       setTimeout(function(){
         can_shoot=true;
