@@ -25,14 +25,18 @@ function start(){
       can_shoot=false;
       var laser_one=new sjs.Image("laser.png");
       var laser_two=new sjs.Image("laser.png");
-      laser.type="laser";
-      laser_two.type="laser";
-      laser.friction=0;
-      laser.noBounds=true;
-      laser.setSize(16,50);
+      laser.type="laser_one";
+      laser_two.type="laser_two";
+      laser_one.friction=0;
+      laser_two.friction=0;
+      laser_one.noBounds=true;
+      laser_two.noBounds=true;
+      laser_one.setSize(16,50);
+      laser_two.setSize(16,50);
       laser_one.moveTo(player.getX()+18,300);
-      laser_two.moveTo(player.getX()+2.3,300);
-      laser.pushUp(25.5);
+      laser_two.moveTo(player.getX()-13.7,300);
+      laser_one.pushUp(25.5);
+      laser_two.pushUp(25.5);
       setTimeout(function(){
         can_shoot=true;
       },1500);
