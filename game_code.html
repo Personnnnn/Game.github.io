@@ -9,7 +9,7 @@ function start(){
   player.setSize(50,50);
   player.center().bottom();
   player.type="player";
-  player.friction=1;
+  player.friction=0.5;
   sjs.keyDown(LEFT_KEY,function(){
     player.pushLeft();
   });
