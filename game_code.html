@@ -6,9 +6,13 @@
 function start(){
   sjs.open("target",500,400);
   var player=new sjs.Image("player.png");
-  player.type="player";
   player.setSize(50,50);
   player.center().bottom();
+  player.type="player";
+  player.friction=0;
+  sjs.keyDown(LEFT_KEY,function(){
+    player.moveLeft(10);
+  });
 }
 </script>
 </head>
