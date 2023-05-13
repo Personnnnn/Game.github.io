@@ -40,12 +40,12 @@ function start(){
   setInterval(function(){
     chance=Math.floor(Math.random()*10);
     if (chance<=5){
-      var obstacle=new sjs.Image("Obstacle.png");
+      var obstacle=new sjs.Image("obstacle.png");
       obstacle.type="obstacle";
       obstacle.friction=0;
       obstacle.noBounds=true;
-      obstacle.setSize(50+Math.random()*100,50);
-      obstacle.moveTo(0,Math.random()*500);
+      obstacle.setSize(Math.floor(50+Math.random())*100,50);
+      obstacle.moveTo(0,Math.floor(Math.random()*500));
       obstacle.pushDown(5.5);
     }
   },500);
