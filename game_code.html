@@ -11,7 +11,13 @@ function start(){
   player.type="player";
   player.friction=0;
   sjs.keyDown(LEFT_KEY,function(){
-    player.moveLeft(10);
+    player.pushLeft();
+  });
+  sjs.keyDown(RIGHT_KEY,function(){
+    player.pushRight();
+  });
+  sjs.onHit("player",["left_screen","right_screen"],function(x,y){
+    x.stoppedBy(y);
   });
 }
 </script>
