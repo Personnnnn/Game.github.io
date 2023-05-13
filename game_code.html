@@ -11,7 +11,7 @@ function start(){
   player.setSize(50,50);
   player.center().bottom();
   player.type="player";
-  player.friction=0.4;
+  player.friction=0.1;
   sjs.keyDown(LEFT_KEY,function(){
     player.pushLeft();
   });
@@ -42,7 +42,7 @@ function start(){
     if (chance<=5){
       var obstacle=new sjs.Image("Obstacle.png");
       obstacle.type="obstacle";
-      obstacle.friction=0.1;
+      obstacle.friction=0;
       obstacle.noBounds=true;
       obstacle.moveTo(0,Math.random()*500)
       obstacle.setSize(50+Math.random()*100,50);
