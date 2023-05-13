@@ -4,6 +4,8 @@
 <script src="https://simplycodingcourses.com/files/simply.js"></script>
 <script>
 function start(){
+  var fire_rate=1500;
+  var chance
   sjs.open("target",500,400);
   var player=new sjs.Image("player.png");
   player.setSize(50,50);
@@ -32,9 +34,20 @@ function start(){
       laser.pushUp(25.5);
       setTimeout(function(){
         can_shoot=true;
-      },1500);
+      },fire_rate);
     }
   });
+  setInterval(function(){
+    chance=Math.floor(Math.random()*10);
+    if (chance<=5){
+      var obstacle=new sjs.Image("Obstacle.png");
+      obstacle.type="obstacle";
+      obstacle.friction=0.1;
+      obstacle.noBounds=true;
+      obstacle.setSize(50+Math.random()*50,50);
+      obstacle.pushDown(15.5);
+    }
+  },500);
 }
 </script>
 </head>
