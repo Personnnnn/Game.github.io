@@ -19,6 +19,22 @@ function start(){
   sjs.onHit("player",["left_screen","right_screen"],function(x,y){
     x.stoppedBy(y);
   });
+  var can_shoot=true;
+  sjs.keyDown(UP_KEY,function(){
+    if (can_shoot==true){
+      can_shoot=false;
+      var laser=new sjs.Image("laser.png");
+      laser.type="laser";
+      laser.friction=0;
+      laser.noBounds=true;
+      laser.setSize(15,50);
+      laser.moveTo(player.getX()+25,100);
+      laser.pushUp(25.5);
+      setTimeout(function(){
+        can_shoot=true;
+      },1500);
+    }
+  });
 }
 </script>
 </head>
